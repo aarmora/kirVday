@@ -2,7 +2,7 @@
     <h2>For Kir</h2>
     <p></p>
     <mat-grid-list gutterSize="50" cols="3">
-        <mat-grid-tile *ngFor="let gift of gifts | async">
+        <mat-grid-tile *ngFor="let gift of gifts | async" [class.redeemed]="gift.redeemDate !== ''">
 
             <mat-card class="example-card">
                 <mat-card-header>
@@ -16,7 +16,11 @@
                     </p>
                 </mat-card-content>
                 <mat-card-actions>
-                    <!-- <button mat-button>REDEEM</button> -->
+                    <button mat-button (click)="redeem(gift)" *ngIf="gift.redeemDate === ''; else redeemed">REDEEM</button>
+                    <ng-template #redeemed>
+                        <button class="disabled" mat-button disabled>REDEEMED ON {{convertTimestamp(gift.redeemDate) |
+                            date}}</button>
+                    </ng-template>
                 </mat-card-actions>
             </mat-card>
         </mat-grid-tile>

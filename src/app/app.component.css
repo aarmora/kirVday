@@ -1,3 +1,11 @@
 .container {
     padding: 50px;
 }
+
+button.disabled {
+    color: black !important;
+}
+
+.redeemed {
+    opacity: .6;
+}
