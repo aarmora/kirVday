@@ -1,5 +1,21 @@
+
 .container {
-    padding: 50px;
+    padding: 0 150px;
+}
+
+
+@media (max-width: 1600px) {
+    .container {
+        padding: 0 100px;
+        ;
+    }
+}
+
+@media (max-width: 1472px) {
+    .container {
+        padding: 0 50px;
+        ;
+    }
 }
 
 button.disabled {
@@ -8,4 +24,30 @@ button.disabled {
 
 .redeemed {
     opacity: .6;
+}
+
+img {
+    max-width: 354px;
+}
+
+.grid-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-tile {
+    margin: 25px;
+    width: 350px;
+}
+
+.mat-card-header {
+    min-height: 70px;
+}
+
+.mat-card-content {
+    min-height: 68px;
+}
+
+.img-holder {
+    min-height: 235px;
 }
